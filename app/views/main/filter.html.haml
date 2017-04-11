@@ -1,0 +1,15 @@
+= form_tag('data_request', remote: true, class: 'form-horizontal', role: 'form', method: "post") do
+  %div.form-group
+    %label.col-sm-4.control-label{ for: 'dateFrom' }
+      from
+    %div.col-sm-8
+      = datetime_local_field(:date, :from)
+  %div.form-group
+    %label.col-sm-4.control-label{ for: 'dateTo' }
+      to
+    %div.col-sm-8
+      = datetime_local_field(:date, :to)
+  %div.form-group
+    %div.col-sm-offset-4.col-sm-8
+      = submit_tag("send")
+

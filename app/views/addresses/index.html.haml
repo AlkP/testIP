@@ -1,0 +1,18 @@
+%h1
+  = link_to :New, new_address_path
+  {
+  = link_to :ping, ping_path, remote: true
+  }
+
+%table.table.table-striped
+  %thead
+    = render 'address_title'
+  %tbody.tbody-question
+    = render @addresses
+
+%br
+
+= paginate @addresses, :theme => 'twitter-bootstrap-3',
+                   :pagination_class => "pagination-sm"
+
+%br

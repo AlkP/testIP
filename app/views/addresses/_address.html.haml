@@ -1,0 +1,8 @@
+%tr
+  %td= address.id
+  %td= link_to address.ip, edit_address_path(address)
+  %td= address.switched
+  %td= link_to :delete,
+          address_path(address),
+          :method => :delete,
+          :data => { :confirm => 'Are you sure?' }

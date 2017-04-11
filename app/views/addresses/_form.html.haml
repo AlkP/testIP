@@ -1,0 +1,21 @@
+= form_for @address, html: { class: 'form-horizontal',role: 'form' } do |f|
+  %div.form-group
+    %label.col-sm-4.control-label{ for: "address_name" }
+      Name
+    %div.col-sm-8
+      = f.text_field :name, class: 'form-control'
+  %div.form-group
+    %label.col-sm-4.control-label{ for: "address_ip" }
+      IP
+    %div.col-sm-8
+      = f.text_field :ip, class: 'form-control'
+  %div.form-group
+    %label.col-sm-4.control-label{ for: "address_switched" }
+      ON?
+    %div.col-sm-8
+      = f.check_box :switched
+  %div.form-group
+    %div.col-sm-offset-4.col-sm-8
+      = link_to :exit, addresses_path, {class: "btn btn-danger button" }
+      %button.btn.btn-default{ type: "submit button", class: "btn btn-info button" }
+        = :submit
