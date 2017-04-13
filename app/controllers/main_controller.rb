@@ -1,10 +1,7 @@
 class MainController < ApplicationController
 
   def ping
-    addresses = Address.only_working
-    addresses.each do |address|
-      Resque.enqueue(Pinger, address.id)
-    end
+    Resque.enqueue(Runner)
   end
 
   def filter

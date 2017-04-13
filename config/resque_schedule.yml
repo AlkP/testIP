@@ -1,5 +1,4 @@
-do_my_job:
+every_five_minutes_job:
   every: 5m
-  class: Pinger
-  args:
-  description: Runs the perform method in Pinger
+  class: "Runner"
+  description: "every five minutes job"
