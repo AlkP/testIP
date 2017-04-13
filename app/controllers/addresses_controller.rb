@@ -11,7 +11,7 @@ class AddressesController < ApplicationController
   end
 
   def create
-    address = Address.find_or_create_by(ip_param)
+    address = Address.find_or_create_by(params[:address][:ip])
     address.update!(addresses_params)
     address.deleted = false
     address.save
@@ -33,10 +33,6 @@ class AddressesController < ApplicationController
   end
 
   private
-
-  def ip_param
-    params.require(:address).permit( :ip )
-  end
 
   def addresses_params
     params.require(:address).permit( :name, :ip, :switched )

@@ -1,4 +1,4 @@
 every_five_minutes_job:
-  every: 5m
+  cron: "*/5 * * * *"
   class: "Runner"
   description: "every five minutes job"
